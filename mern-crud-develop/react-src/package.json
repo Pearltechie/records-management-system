@@ -1,0 +1,66 @@
+{
+  "name": "mern-crud",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "axios": "^1.20.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.5",
+    "socket.io-client": "^4.8.3",
+    "web-vitals": "^6.2.1"
+  },
+  "scripts": {
+    "start": "REACT_APP_API_URL=http://localhost:3000 PORT=4200 react-scripts start",
+    "build": "BUILD_PATH='../public' react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "acorn-import-attributes": "^1.9.5"
+  },
+  "overrides": {
+    "@pmmmwh/react-refresh-webpack-plugin": {
+      "shell-quote": "1.9.0"
+    },
+    "launch-editor": {
+      "shell-quote": "1.9.0"
+    },
+    "react-dev-utils": {
+      "shell-quote": "1.9.0"
+    },
+    "react-scripts": {
+      "shell-quote": "1.9.0"
+    },
+    "shell-quote": {
+      "shell-quote": "1.9.0"
+    },
+    "webpack-dev-server": {
+      "shell-quote": "1.9.0"
+    }
+  }
+}
