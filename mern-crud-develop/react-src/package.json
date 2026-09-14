@@ -16,8 +16,8 @@
     "web-vitals": "^6.2.1"
   },
   "scripts": {
-    "start": "REACT_APP_API_URL=http://localhost:3000 PORT=4200 react-scripts start",
-    "build": "BUILD_PATH='../public' react-scripts build",
+    "start": "cross-env REACT_APP_API_URL=http://localhost:3000 PORT=4200 react-scripts start",
+    "build": "cross-env BUILD_PATH='../public' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,7 +41,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "acorn-import-attributes": "^1.9.5"
+    "acorn-import-attributes": "^1.9.5",
+    "cross-env": "^10.1.0"
   },
   "overrides": {
     "@pmmmwh/react-refresh-webpack-plugin": {

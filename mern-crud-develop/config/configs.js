@@ -2,5 +2,5 @@
 
 module.exports = {
   db: process.env.DB || 'mongodb://localhost/mern-crud',
-  react_app_url: "http://localhost:4200"
+  react_app_url: 'http://localhost:4200'
 };
