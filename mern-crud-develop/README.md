@@ -105,6 +105,12 @@ Run backend linting:
 npm run lint
 ```
 
+Audit backend dependencies for high-severity vulnerabilities:
+
+```bash
+npm audit --audit-level=high
+```
+
 Run frontend tests:
 
 ```bash

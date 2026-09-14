@@ -18,6 +18,8 @@ jobs:
           cache: npm
       - name: Install server dependencies
         run: npm ci
+      - name: Audit server dependencies
+        run: npm audit --audit-level=high
       - name: Run server lint
         run: npm run lint
       - name: Run server tests

@@ -1,55 +1,31 @@
 const mongoose = require('mongoose');
 const unique = require('mongoose-unique-validator').default;
-const validate = require('mongoose-validator');
-
-const nameValidator = [
-  validate({
-    validator: 'isLength',
-    arguments: [0, 40],
-    message: 'Name must not exceed {ARGS[1]} characters.'
-  })
-];
-
-const emailValidator = [
-  validate({
-    validator: 'isLength',
-    arguments: [0, 40],
-    message: 'Email must not exceed {ARGS[1]} characters.'
-  }),
-  validate({
-    validator: 'isEmail',
-    message: 'Email must be valid.'
-  })
-];
-
-const ageValidator = [
-  // TODO: Make some validations here...
-];
-
-const genderValidator = [
-  // TODO: Make some validations here...
-];
 
 // Define the database model
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'Name is required.'],
-    validate: nameValidator
+    maxlength: [40, 'Name must not exceed 40 characters.']
   },
   email: {
     type: String,
     required: [true, 'Email is required.'],
     unique: true,
-    validate: emailValidator
+    maxlength: [40, 'Email must not exceed 40 characters.'],
+    match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Email must be valid.']
   },
   age: {
     type: Number,
-    validate: ageValidator
+    min: [5, 'Age must be at least 5.'],
+    max: [130, 'Age must not exceed 130.']
   },
   gender: {
     type: String,
-    validate: genderValidator
+    enum: {
+      values: ['m', 'f'],
+      message: 'Gender must be m or f.'
+    }
   }
 });
 

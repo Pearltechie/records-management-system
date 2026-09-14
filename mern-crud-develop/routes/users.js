@@ -127,7 +127,7 @@ router.put('/:id', async (req, res) => {
     const user = await User.findByIdAndUpdate(
       req.params.id,
       sanitized,
-      { runValidators: true, context: 'query', new: true }
+      { runValidators: true, context: 'query', returnDocument: 'after' }
     );
 
     if (!user) {

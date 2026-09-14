@@ -26,7 +26,7 @@ const createApp = () => {
   const app = express();
 
   // We are using this for the express-rate-limit middleware.
-  app.enable('trust proxy');
+  app.set('trust proxy', 1);
 
   // Set public folder using built-in express.static middleware
   app.use(express.static('public'));
